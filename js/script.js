@@ -49,7 +49,7 @@ const calc = (firstNumber,operator,lastNumber) => {
         case "divide":
             return firstNum / lastNum;
         default:
-            return firstNum;
+            return 0;
     }
 }
 
