@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;600;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  position: relative;
+  font-family: 'MuseoModerno', cursive;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  width: 100%;
+  background: #000000;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8);
+  transition: all 100ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+button:focus {
+  outline: none;
+}
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.075);
+  clip-path: circle(0% at 50% 50%);
+  transition: all 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+button:hover::after {
+  clip-path: circle(100% at 50% 50%);
+}
+button:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  font-family: 'MuseoModerno', cursive;
+  font-weight: bold;
+  font-size: 2rem;
+}
+body .container {
+  border: 10px solid #000000;
+  box-sizing: border-box;
+  filter: drop-shadow(20px 15px 3px rgba(0, 0, 0, 0.25));
+  border-radius: 100px;
+  color: white;
+  padding: 20px 30px;
+  min-width: 300px;
+  max-width: 500px;
+  width: 95%;
+}
+body .container .calc-area, body .container .reset .reset-btn {
+  background-color: #000;
+  text-align: right;
+  padding: 1rem;
+  padding-right: 30px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 100px 100px  50px 50px;
+}
+body .container .btns {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4.5rem, 1fr));
+  grid-gap: 10px;
+}
+body .container .reset .reset-btn {
+  width: 100%;
+  text-align: center;
+  padding: .5rem 0;
+  border-radius: 50px 50px 100px 100px;
+}
