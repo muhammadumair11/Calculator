@@ -40,7 +40,7 @@ btnEqual.addEventListener("click", () => {
 
 const calc = (firstNumber,operator,lastNumber) => {
     if(firstNumber == '') {
-        firstNumber = '0';
+        firstNumber = recent.innerText;
     }
     let firstNum = parseInt(firstNumber);
     let lastNum = parseInt(lastNumber);
