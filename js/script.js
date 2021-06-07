@@ -2,7 +2,8 @@ const numbers = document.querySelectorAll('[data-number]');
 const operation = document.querySelectorAll('[data-operation]');
 const btnEqual = document.querySelector('[data-equal]');
 const btnReset = document.querySelector('[data-reset]');
-let displayArea = document.querySelector(".calc-area");
+let current = document.querySelector(".current");
+let recent = document.querySelector(".recent");
 
 let firstNumber = lastNumber = operator = '';
 
@@ -11,10 +12,10 @@ numbers.forEach(num => {
     num.addEventListener("click", () => {
         if(operator == '') {
             firstNumber += num.innerText;
-            displayArea.innerText = firstNumber
+            current.innerText = firstNumber
         } else   {
             lastNumber += num.innerText;
-            displayArea.innerText = lastNumber
+            current.innerText = `  ${lastNumber}`;
         }
     })
 })
@@ -22,22 +23,27 @@ operation.forEach(opp => {
     opp.addEventListener("click", () => {
         if(operator == '') {
             operator = opp.getAttribute("data-operation")
+            recent.innerText = `${current.innerText}  ${opp.innerText}`;
         }
     })
 })
 
 btnReset.addEventListener("click", () => {
-    displayArea.innerText = "0";
+    current.innerText = "0";
+    recent.innerText = "0";
     reset();
 })
 btnEqual.addEventListener("click", () => {
-    displayArea.innerText = calc(firstNumber,operator,lastNumber);
+    current.innerText = recent.innerText = calc(firstNumber,operator,lastNumber);
     reset();
 })
 
 const calc = (firstNumber,operator,lastNumber) => {
-    firstNum = parseInt(firstNumber);
-    lastNum = parseInt(lastNumber);
+    if(firstNumber == '') {
+        firstNumber = '0';
+    }
+    let firstNum = parseInt(firstNumber);
+    let lastNum = parseInt(lastNumber);
 
     switch (operator) {
         case "sum":

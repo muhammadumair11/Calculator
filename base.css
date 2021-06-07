@@ -56,10 +56,14 @@ body .container .calc-area, body .container .reset .reset-btn {
   background-color: #000;
   text-align: right;
   padding: 1rem;
-  padding-right: 30px;
+  padding-right: 50px;
   width: 100%;
   overflow: hidden;
-  border-radius: 100px 100px  50px 50px;
+  border-radius: 100px 100px 20px 20px;
+}
+body .container .calc-area .recent, body .container .reset .reset-btn .recent {
+  font-size: 1rem;
+  padding-right: 2rem;
 }
 body .container .btns {
   padding: 10px;

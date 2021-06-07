@@ -80,12 +80,17 @@ body {
                 text-align: right;
 
                 padding: 1rem;
-                padding-right: 30px;
+                padding-right: 50px;
 
                 width: 100%;
                 overflow: hidden;
                 
-                border-radius: 100px 100px  50px 50px;
+                border-radius: 100px 100px 20px 20px;
+
+                .recent {
+                    font-size: 1rem;
+                    padding-right: 2rem;
+                }
             }
 
             .btns {
