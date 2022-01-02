@@ -39,9 +39,7 @@ btnEqual.addEventListener("click", () => {
 })
 
 const calc = (firstNumber,operator,lastNumber) => {
-    if(firstNumber == '') {
-        firstNumber = recent.innerText;
-    }
+    firstNumber = firstNumber == "" ? recent.innerText : firstNumber;
     let firstNum = parseInt(firstNumber);
     let lastNum = parseInt(lastNumber);
 
@@ -59,7 +57,7 @@ const calc = (firstNumber,operator,lastNumber) => {
     }
 }
 
-function reset () {
+const reset = () => {
     firstNumber = lastNumber = operator = "";
 }
 
